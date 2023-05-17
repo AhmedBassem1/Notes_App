@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'Wights/add_note_item_view.dart';
 import 'Wights/notes_body_view.dart';
 
 class NotesView extends StatelessWidget {
@@ -12,10 +13,19 @@ class NotesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         hoverElevation: 20,
         backgroundColor: const Color(0xFF252525),
-        onPressed: () {  },
+        onPressed: () {  
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddNoteItemView()));
+        },
         child: const Icon(Icons.add_outlined,color: Colors.white,size: 35,),),
       body:const NotesBodyViews() ,
     );
   }
 }
+
+
+
+
+
+
+
 
