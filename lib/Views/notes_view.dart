@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:note_app/Views/Wights/add_note_sheet.dart';
 
-import 'Wights/add_note_item_view.dart';
 import 'Wights/notes_body_view.dart';
 
 class NotesView extends StatelessWidget {
@@ -13,14 +13,22 @@ class NotesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         hoverElevation: 20,
         backgroundColor: const Color(0xFF252525),
-        onPressed: () {  
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddNoteItemView()));
+        onPressed: () {
+          showModalBottomSheet(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16)
+              ),
+              context: context, builder: (context){
+            return const AddNoteSheet();
+          });
         },
         child: const Icon(Icons.add_outlined,color: Colors.white,size: 35,),),
       body:const NotesBodyViews() ,
     );
   }
 }
+
+
 
 
 
