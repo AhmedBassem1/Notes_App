@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 class CustomButtonSave extends StatelessWidget {
   const CustomButtonSave({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return  Container(
-      height: 50,
-      width: 50,
+      width: MediaQuery.of(context).size.width,
+      height: 55,
       decoration: BoxDecoration(
-        color: const Color(0xFF3B3B3B),
-        borderRadius: BorderRadius.circular(15),
+        color: const Color(0xFF9A9A9A),
+        borderRadius: BorderRadius.circular(8),
       ),
-      child: const Icon(Icons.save_outlined,size: 28),
+      child:  Center(child: Text('Add',
+        style:  GoogleFonts.nunito(
+          color: const Color(0xFF252525),
+          fontSize: 18,
+          fontWeight: FontWeight.w600
+      ),
+      )
+      ),
     );
   }
 }
