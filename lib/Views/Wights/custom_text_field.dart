@@ -19,7 +19,7 @@ final int maxLine;
       ),
       decoration: InputDecoration(
         hintStyle: GoogleFonts.nunito(
-            color: const Color(0xFF252525),
+            color: const Color(0xFF9A9A9A),
 
             fontWeight: FontWeight.w400
         ),

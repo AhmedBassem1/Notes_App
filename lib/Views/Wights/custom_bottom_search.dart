@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CustomBottomSearch extends StatelessWidget {
-  const CustomBottomSearch({Key? key}) : super(key: key);
-
+class CustomBottomIcon extends StatelessWidget {
+  const CustomBottomIcon({Key? key, required this.icon}) : super(key: key);
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,7 +12,7 @@ class CustomBottomSearch extends StatelessWidget {
         color: const Color(0xFF3B3B3B),
         borderRadius: BorderRadius.circular(15),
       ),
-      child: const Icon(Icons.search_sharp,size: 28),
+      child:  Icon(icon,size: 28),
     );
   }
 }
