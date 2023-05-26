@@ -6,36 +6,34 @@ import 'package:note_app/cubit/add_note_cubit.dart';
 import 'add_note_form.dart';
 
 
+
+
 class AddNoteSheet extends StatelessWidget {
   const AddNoteSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AddNoteCubit(),
-      child: BlocConsumer<AddNoteCubit, AddNoteState>(
-        listener: (context, state) {
-          if (state is AddNoteFailureState) {
-            debugPrint('field is ${state.errMessage}');
-          }
+    return  BlocConsumer<AddNoteCubit, AddNoteState>(
+      listener: (context, state) {
+        if (state is AddNoteFailureState ) {
+          debugPrint('field is ${state.errMessage}');
+        }
 
-          if (state is AddNoteSuccessState) {
-            Navigator.pop(context);
-          }
-        },
-        builder: (context, state) {
-          return AbsorbPointer(
-            absorbing: state is AddNoteLoadingState ? true : false,
+        if(state is AddNoteSuccessState){
+          Navigator.pop(context);
+        }
+      },
+      builder: (context, state) {
+        return AbsorbPointer(
+          absorbing: state is AddNoteLoadingState? true:false,
+          child: const Padding(
 
-            child: const Padding(
-
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: SingleChildScrollView(
-                  child: AddNoteForm()),
-            ),
-          );
-        },
-      ),
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: SingleChildScrollView(
+                child:  AddNoteForm()),
+          ),
+        );
+      },
     );
   }
 }
