@@ -26,6 +26,7 @@ class AddNoteSheet extends StatelessWidget {
       builder: (context, state) {
         return AbsorbPointer(
           absorbing: state is AddNoteLoadingState? true:false,
+
           child: const Padding(
 
             padding: EdgeInsets.symmetric(horizontal: 16.0),
